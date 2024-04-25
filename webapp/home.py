@@ -4,9 +4,21 @@ class Home:
 
     path='/'
 
-    def serve(self):
+    @classmethod
+    def serve(cls,req):
         wp=jp.QuasarPage(tailwind=True)
-        div=jp.Div(a=wp,classes='bg-grey-200 h-screen')
+
+        layout=jp.QLayout(a=wp,view='hHh lpR fFf')
+        header=jp.QHeader(a=layout,)
+        toolbar=jp.QToolbar(a=header)
+        
+        drawer=jp.QDrawer(a=layout,show_if_above=True,v_model='left',bordered=True)
+        jp.QBtn(a=toolbar,dense=True,round=True,flat=True,icon='menu',click=cls.move_drawer,drawer=drawer)
+        jp.QToolbarTitle(a=toolbar,text='Welcome to Dictionary App')
+
+        container=jp.QPageContainer(a=layout)
+
+        div=jp.Div(a=container,classes='bg-grey-200 h-screen')
         jp.Div(a=div,text='Welcome to Dictionary App',classes='text-5xl m-2 text-center')
         jp.Div(a=div,text='''It is a long established fact that a reader will be distracted by the readable content
                of a page when looking at its layout. The point of using Lorem Ipsum is that 
@@ -17,3 +29,10 @@ class Home:
                Various versions have evolved over the years, sometimes by accident, sometimes on purpose injected humour and the like.'''
                ,classes='text-lg')
         return wp
+    
+    @staticmethod
+    def move_drawer(widget,msg):
+        if widget.drawer.value:
+            widget.drawer.value=False
+        else:
+            widget.drawer.value=True

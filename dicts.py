@@ -9,5 +9,5 @@ class WordDefinition:
         data=pd.read_csv('web-dict\words.csv')
         return tuple(data.loc[data['word']==self.word]['definition'])
     
-wrd=WordDefinition(word='data')
-print(wrd.get_definition())
+wrd=WordDefinition(word='word')
+#print(wrd.get_definition())
