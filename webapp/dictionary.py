@@ -9,7 +9,11 @@ class Dictionary:
     @classmethod
     def serve(cls,req):
         wp=jp.QuasarPage(tailwind=True)
-        div=jp.Div(a=wp,classes='bg-grey-200 h-screen')
+
+        lays=layout_master.MasterLayout(a=wp,view='hHh lpR fFf')
+        container=jp.QPageContainer(a=lays)
+
+        div=jp.Div(a=container,classes='bg-grey-200 h-screen')
         jp.Div(a=div,text='Start using the Dictionary App!',classes='text-5xl text-center m-2')
         jp.Div(a=div,text='Use the app to find meaning of English words.',classes='text-lg py-2 px-3')
 
