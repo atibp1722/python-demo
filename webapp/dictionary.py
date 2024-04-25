@@ -1,8 +1,9 @@
 import justpy as jp
 import dicts as dct
 from webapp import layout_master
+from webapp import pages
 
-class Dictionary:
+class Dictionary(pages.Page):
 
     path='/dict'
 

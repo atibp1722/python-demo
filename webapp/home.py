@@ -1,7 +1,8 @@
 import justpy as jp
 from webapp import layout_master
+from webapp import pages
 
-class Home:
+class Home(pages.Page):
 
     path='/'
 
