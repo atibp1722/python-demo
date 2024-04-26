@@ -17,6 +17,3 @@ class API:
 
         wp.html=json.dumps(json_response)
         return wp
-    
-jp.Route('/api',API.serve)
-jp.justpy()
