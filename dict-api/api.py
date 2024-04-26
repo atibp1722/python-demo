@@ -1,4 +1,5 @@
 import justpy as jp
+import dicts
 
 class API:
     
@@ -6,7 +7,8 @@ class API:
     def serve(cls,req):
         wp=jp.WebPage()
         word=req.query_params.get('w')
-        jp.Div(a=wp,text=word.title())
+        meaning=dicts.WordDefinition(word).get_definition()
+        wp.html=meaning
         return wp
     
 jp.Route('/api',API.serve)
