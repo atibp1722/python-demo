@@ -30,5 +30,5 @@ class Dictionary(pages.Page):
     
     @staticmethod
     def get_definition(widget,msg):
-        meaning=dct.WordDefinition(widget.value).get()
+        meaning=dct.WordDefinition(widget.value).get_definition()
         widget.outputs.text=" ".join(meaning)
