@@ -1,5 +1,6 @@
 import justpy as jp
 import dicts
+import json
 
 class API:
     
@@ -8,7 +9,13 @@ class API:
         wp=jp.WebPage()
         word=req.query_params.get('w')
         meaning=dicts.WordDefinition(word).get_definition()
-        wp.html=meaning
+
+        json_response={
+            "word":word,
+            "meaning":meaning
+        }
+
+        wp.html=json.dumps(json_response)
         return wp
     
 jp.Route('/api',API.serve)
