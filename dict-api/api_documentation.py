@@ -12,11 +12,8 @@ class Docs():
         jp.Hr(a=div)
         jp.Div(a=div,text='http://127.0.0.1:8000/api?w=your_word')
         jp.Hr(a=div)
-        jp.Div(a=div,text='''{"word": "moon", 
-               "meaning": ["A natural satellite of a planet.",
-               "A month, particularly a lunar month (approximately 28 days).", 
-               "To fuss over adoringly or with great affection.", 
-               "Deliberately show ones bare ass (usually to an audience, 
-               or at a place, where this is not expected or deemed appropriate).", 
-               "To be lost in phantasies or be carried away by some internal vision, having temorarily lost (part of) contact to reality."]}''')
+        jp.Div(a=div,text='''{"word": "exam",
+                "meaning": 
+               ["A session in which a product or piece of equipment is placed under everyday and/or
+                extreme conditions and is examined for its durability, etc."]}''')
         return wp
